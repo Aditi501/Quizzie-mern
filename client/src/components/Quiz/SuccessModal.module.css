@@ -1,0 +1,78 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .modalContent {
+    background: white;
+    position: absolute;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 500px;
+    height:250px;
+    
+  }
+  .Published{
+    margin-top:15px;
+    font-family: poppins;
+    font-size: 33px;
+    color:#474444;
+    font-weight: 500;
+  }
+.ShareLink{
+  margin-top: 20px;
+  width: 400px;
+  height: 40px;
+  background: #EDEDED;
+  border: none;
+  border-radius:10px;
+  text-indent: 15px;
+  font-family: poppins;
+}  
+  .share{
+    margin-top: 50px;
+    height: 30px;
+    width:200px;
+    background: #60B84B;
+    color: white;
+    border: none;
+    font-family: poppins;
+  }
+  .cross{
+    margin-top:-120px;
+    float: right;
+    height:30px;
+    border: none;
+    background-color: white;
+    font-family: poppins;
+    font-size: 20px;
+    line-height: -3px;;
+    color:#474444;
+    font-weight: 400;
+  }
+  
+  .copiedMessage {
+    color: green;
+    margin-top: -117px;
+    float: right;
+    margin-right: 15px;
+    font-family: poppins;
+    color:#474444;
+    font-weight: 400;
+    font-size: 14px;
+    border-bottom: 2px solid #60B84B;
+  }
+  .copiedMessage img{
+    width:15px;
+    height:15px;
+    margin-top: 2px;;
+  }

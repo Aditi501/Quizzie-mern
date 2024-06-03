@@ -1,0 +1,51 @@
+.form{
+    position: absolute;
+    width: 650px;
+    height: 150px;
+    top: 11rem;
+    left: 14rem;
+    border-radius: 10px 10px 0px 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    display: grid;
+    grid-template-columns:  1fr 2fr ;
+}
+.form input{
+    max-width: 280px;
+    max-height: 34px;
+    min-width: 280px;
+    min-height: 34px;
+    border-radius: 10px 10px 0px 0px;
+    border: none;
+    background: #F4F4F4;
+    opacity: 0px;
+    box-sizing: border-box;
+}
+.form label{
+    width: 200px;
+    height: 30px;
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: right;
+    color: #474444;
+    margin-top: 10px;
+}
+.login{
+    position: absolute;
+    width:210px;
+    height: 30px;
+    top: 10rem;
+    left: 10rem;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+    border: none;
+    background: #A9BCFF;
+    color: #474444;
+    font-size: 15px;
+}
+.form input.invalid {
+    border: 1px solid red;
+  }
