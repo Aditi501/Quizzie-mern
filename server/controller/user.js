@@ -1,5 +1,5 @@
 const User = require('../model/user')
-const bcrypt = require('bcrypt')
+const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 const registerUser = async (req, res, next) => {
@@ -24,7 +24,7 @@ const registerUser = async (req, res, next) => {
             return res.status(400).send('Passwords do not match');
           }
 
-        const hashedpassword = await bcrypt.hash(password, 10)
+        const hashedpassword = await bcryptjs.hash(password, 10)
 
         const userData = new User({
             name,
@@ -58,7 +58,7 @@ const loginUser = async (req, res, next) => {
                     message: "User Doesn't exist"
                 })
         }
-        const passwordMatch = await bcrypt.compare(password, userDetails.password)
+        const passwordMatch = await bcryptjs.compare(password, userDetails.password)
 
         if (!passwordMatch) {
             return res.json({
