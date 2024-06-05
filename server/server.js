@@ -6,6 +6,10 @@ const cors=require('cors');
 const authRoute=require('./routes/auth');
 const quizRoute=require('./routes/quiz')
 const port= process.env.PORT
+const path =require('path');
+const url= require ('url');
+
+
 
 const corsOptions = {
   allowedHeaders: ['Authorization', 'Content-Type'], }

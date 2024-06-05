@@ -37,12 +37,12 @@ const Create = ({ isOpen, onClose }) => {
     };
     console.log(authToken);
     try {
-      const response = await axios.post('http://localhost:3000/api/v1/quiz/create', quizData, {
+      const response = await axios.post('https://quizziebackend-w1h9.onrender.com/api/v1/quiz/create', quizData, {
         headers: { Authorization: `${authToken}` }
       });
       setQuizzes((prevQuizzes) => [...prevQuizzes, response.data]);
       const currentUrl = window.location.href;
-      const generatedLink = `http://localhost:5173/quiz/${response.data.quiz._id}`;
+      const generatedLink = `https://cerulean-tanuki-814ab8.netlify.app/quiz/${response.data.quiz._id}`;
       setQuizLink(generatedLink);
       setQuizId(response.data.quiz._id);
       localStorage.setItem('quizId',response.data.quiz._id)

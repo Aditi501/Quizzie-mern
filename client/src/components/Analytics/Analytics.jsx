@@ -19,7 +19,7 @@ const Analytics = () => {
 
   const handleDelete = async (quizId) => {
     try {
-      await axios.delete(`http://localhost:3000/api/v1/quiz/delete/${quizId}`,
+      await axios.delete(`https://quizziebackend-w1h9.onrender.com/api/v1/quiz/delete/${quizId}`,
       {headers: { Authorization: `${authToken}` }},{userId});
       setIsDelete(false);
       fetchQuizById(userId);
@@ -33,7 +33,7 @@ const Analytics = () => {
   };
 
   const handleShare = (quizId) => {
-    const quizLink = `http://localhost:5173/quiz/${quizId}`;
+    const quizLink = `https://cerulean-tanuki-814ab8.netlify.app/quiz/${quizId}`;
     navigator.clipboard.writeText(quizLink);
     alert('Quiz link copied to clipboard!');
   };
@@ -79,7 +79,7 @@ const Analytics = () => {
               <td>
                 <button className={styles.actionbtn} onClick={() => setId(quiz._id)}><img src={edit}/></button>
                 <button className={styles.actionbtn} onClick={() => {setId(quiz._id);setIsDelete(true)}}><img src={del}/></button>
-                <button className={styles.actionbtn} onClick={() => handleShare(quiz._id)}><img src={share}/></button>
+                <button className={styles.actionbtn} onClick={() => {setId(true);handleShare(quiz._id)}}><img src={share}/></button>
               </td>
               <td>
                 <Link className={styles.linkQuesAnalysis} to={`/analysis/${quiz._id}`} onClick={() => handleViewAnalysis(quiz._id)}>Question Wise Analysis</Link>

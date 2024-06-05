@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
             fetchAggregate(userId);
         }
        if(quizId){
-        fetchQuizData
+        fetchQuizData(quizId)
        }
         fetchQuiz()
     }, []);
@@ -55,7 +55,7 @@ export const AuthProvider = ({ children }) => {
 
     const registerUser= async({name,email,password,confirmPassword})=>{
         try{
-            const response = await axios.post(`http://localhost:3000/api/v1/auth/register`, {
+            const response = await axios.post(`https://quizziebackend-w1h9.onrender.com/api/v1/auth/register`, {
                 name,
                 email,
                 password,
@@ -71,7 +71,7 @@ export const AuthProvider = ({ children }) => {
 
     const loginUser = async ({ email, password }) => {
         try {
-            const reqUrl = `http://localhost:3000/api/v1/auth/login`;
+            const reqUrl = `https://quizziebackend-w1h9.onrender.com/api/v1/auth/login`;
             
             const response = await axios.post(reqUrl, {email,password});
     
@@ -92,7 +92,7 @@ export const AuthProvider = ({ children }) => {
     const fetchQuizById=async(userId)=>{
             try {
             console.log(authToken)
-              const response = await axios.get('http://localhost:3000/api/v1/quiz/getByUserId',
+              const response = await axios.get('https://quizziebackend-w1h9.onrender.com/api/v1/quiz/getByUserId',
               {headers: { Authorization: `${authToken}` }},{userId});
               setQuizzes(response.data);
               console.log(response.data);
@@ -105,7 +105,7 @@ export const AuthProvider = ({ children }) => {
         console.log('useEffect called',quizId);
 
         try {
-            const response = await axios.get(`http://localhost:3000/api/v1/quiz/get/${quizId}`);
+            const response = await axios.get(`https://quizziebackend-w1h9.onrender.com/api/v1/quiz/get/${quizId}`);
             console.log(response.data)
             setQuiz(response.data.quiz);
             
@@ -116,7 +116,7 @@ export const AuthProvider = ({ children }) => {
       };
     const fetchQuiz= async()=>{
         try{
-            const response = await axios.get('http://localhost:3000/api/v1/quiz/get')
+            const response = await axios.get('https://quizziebackend-w1h9.onrender.com/api/v1/quiz/get')
             setQuizzes(response.data)
         }
         catch(error){
@@ -125,7 +125,7 @@ export const AuthProvider = ({ children }) => {
     }
     const fetchAggregate=async(userId)=>{
         try{
-              const response = await axios.get('http://localhost:3000/api/v1/quiz/total',
+              const response = await axios.get('https://quizziebackend-w1h9.onrender.com/api/v1/quiz/total',
               {headers: { Authorization: `${authToken}` }},{userId});
               console.log('Aggregated Stats:', response.data);
               setAggregatedStats(response.data);

@@ -100,7 +100,7 @@ const Quiz = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/v1/quiz/submit', {
+      const response = await axios.post('https://quizziebackend-w1h9.onrender.com/api/v1/quiz/submit', {
         quizId,
         userId,
         answers
